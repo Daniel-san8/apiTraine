@@ -4,9 +4,13 @@ setInterval(() => {
       return response.json();
     })
     .then((r) => {
-      return r.BRL.buy;
-    })
-    .then((r) => {
-      document.body.innerText = `este é o atual valor do bitcoin: ${r}`;
+      let formatacao = r.BRL.buy;
+
+      let bitcoinReal = formatacao.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      });
+
+      document.body.innerText = `este é o atual valor do bitcoin: ${bitcoinReal}`;
     });
-}, 3000);
+}, 30000);
