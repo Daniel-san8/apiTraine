@@ -16,11 +16,11 @@ const api = fetch("https://viacep.com.br/ws/40350000/json/");
 api
   .then((r) => {
     const r2 = r.clone();
-    r2.text().then((r) => {
-      console.log(r);
-    });
+    r2.text().then((r) => {});
     return r.json();
   })
-  .then((r) => {
-    console.log(r);
-  });
+  .then((r) => {});
+
+api.then((r) => {
+  console.log(r.type);
+});
