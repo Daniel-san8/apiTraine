@@ -28,3 +28,23 @@ const retorno = promessa
   .finally(() => console.log("promise terminada"));
 
 console.log(retorno);
+
+localStorage.daniel = "Daniel San";
+
+fetch("https://pokeapi.co/api/v2/pokemon/1/")
+  .then((r) => {
+    return r.json();
+  })
+  .then((r) => {});
+
+const url = "https://jsonplaceholder.typicode.com/posts/2";
+const options = {
+  method: "HEAD",
+  headers: {
+    "Content-Type": "application/json; charset=utf-8",
+  },
+};
+
+fetch(url, options).then((r) => {
+  console.log(r.headers.get("Content-type"));
+});
